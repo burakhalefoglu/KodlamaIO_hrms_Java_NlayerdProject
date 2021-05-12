@@ -1,0 +1,15 @@
+
+"Product"{
+
+	{id: 1, title: 'Bilgisayar Modeli', description:'Bilgisayar modelimiz çok yenidir...', price: 250,imageUrl:'https://cdn.vatanbilgisayar.com/Upload/PRODUCT/huawei/thumb/v2-93768_large.jpg'},
+    {id: 2, title: 'Telefon Modeli', description:'Telefon modelimiz çok yenidir...', price: 150,imageUrl:'https://ayb.akinoncdn.com/products/2020/03/06/32816/f6b22eff-8ab7-4c0d-96e2-3f8c0f9a48c9_size780x780_quality60_cropCenter.jpg'},
+
+
+},
+
+"SideElements"{
+
+{id:1, name: 'Bilgisayar'},
+    {id:2, name: 'Telefon'}
+
+}
