@@ -1,9 +1,9 @@
 package com.kodlamaio.hrms.entites.concretes;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,15 +15,19 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "business_positions")
-public class BusinessPosition {
+@Table(name = "employees")
+public class Employee {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	private int Id;
-
+	public int id;
 	@Column(name = "name")
-	private String name;
-
+	public String name;
+	@Column(name = "surname")
+	public String surname;
+	@Column(name = "identity_number")
+	public String identityNumber;
+	@Column(name = "birthday")
+	public Date birthDay;
+	
 }
