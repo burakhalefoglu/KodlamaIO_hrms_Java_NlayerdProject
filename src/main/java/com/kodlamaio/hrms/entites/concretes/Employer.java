@@ -1,8 +1,14 @@
 package com.kodlamaio.hrms.entites.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapKey;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -26,5 +32,13 @@ public class Employer {
 	@Column(name = "tel")
 	public String tel;
 
-
+	@OneToOne
+	@MapKey
+	@JoinColumn(name = "user_id")
+	private User user;
+	
+	
+	@OneToMany(mappedBy  = "employer")
+	public List<JobAdvertisement> jobAdvertisement;
+	
 }

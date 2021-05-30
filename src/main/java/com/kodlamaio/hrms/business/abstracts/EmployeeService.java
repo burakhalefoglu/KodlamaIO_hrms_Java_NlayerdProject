@@ -7,5 +7,5 @@ import com.kodlamaio.hrms.core.Utilities.Result.DataResult;
 
 public interface EmployeeService {
 	
-	DataResult<List<Employee>> getEmplyees();
+	DataResult<List<Employee>> getAll();
 }

@@ -25,7 +25,7 @@ public class EmployeeController {
 	@GetMapping("/")
 	public Result getEmployees(){
 		
-		return employeeService.getEmplyees();
+		return employeeService.getAll();
 	}
 	
 }

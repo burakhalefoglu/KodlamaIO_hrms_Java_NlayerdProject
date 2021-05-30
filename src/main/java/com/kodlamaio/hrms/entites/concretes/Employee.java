@@ -5,6 +5,9 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapKey;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -29,5 +32,10 @@ public class Employee {
 	public String identityNumber;
 	@Column(name = "birthday")
 	public Date birthDay;
-	
+
+	@OneToOne
+	@MapKey
+	@JoinColumn(name = "user_id")
+	private User user;
+
 }
