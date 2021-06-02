@@ -40,27 +40,6 @@ public class AuthManager implements AuthService {
 	@Override
 	public Result registerAsEmployee(EmployeeRegisterDto employeeRegisterDto) {
 
-		if (employeeRegisterDto.birthDay == null) {
-			return new ErrorResult("Dirtday can not empty");
-		}
-		if (employeeRegisterDto.email == null) {
-			return new ErrorResult("Email can not empty");
-		}
-		if (employeeRegisterDto.identityNumber == null) {
-			return new ErrorResult("identityNumber can not empty");
-		}
-
-		if (employeeRegisterDto.name == null) {
-			return new ErrorResult("name can not empty");
-		}
-		if (employeeRegisterDto.password == null || employeeRegisterDto.passwordAgain == null) {
-			return new ErrorResult("Email can not empty");
-		}
-		if (employeeRegisterDto.password != employeeRegisterDto.passwordAgain) {
-
-			return new ErrorResult("Password did not match");
-		}
-
 		var result = userDao.findByEmail(employeeRegisterDto.email);
 		if (result != null) {
 			return new ErrorResult("This email already registered");
@@ -80,27 +59,6 @@ public class AuthManager implements AuthService {
 
 	@Override
 	public Result registerAsEmployer(EmployerRegisterDto employerRegisterDto) {
-
-		if (employerRegisterDto.email == null) {
-			return new ErrorResult("Email can not empty");
-		}
-		if (employerRegisterDto.tel == null) {
-			return new ErrorResult("Email can not empty");
-		}
-		if (employerRegisterDto.webiste == null) {
-			return new ErrorResult("Email can not empty");
-		}
-
-		if (employerRegisterDto.companyName == null) {
-			return new ErrorResult("name can not empty");
-		}
-		if (employerRegisterDto.password == null || employerRegisterDto.passwordAgain == null) {
-			return new ErrorResult("Email can not empty");
-		}
-		if (employerRegisterDto.password != employerRegisterDto.passwordAgain) {
-
-			return new ErrorResult("Password did not match");
-		}
 
 		var result = userDao.findByEmail(employerRegisterDto.email);
 		if (result != null) {

@@ -14,26 +14,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-@Data
 @Entity
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
-@Table(name = "programming_languages")
-public class ProgrammingLanguage {
+@NoArgsConstructor
+@Table(name="language_level")
+public class ForeignLanguageLevel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	public short id;
 	
-	@Column(name = "name")
-	public String name;
+	@Column(name = "level")
+	public short level;
+	
+	@OneToMany(mappedBy  = "languageLevel")
+	public List<UserForeignLanguage> userForeignLanguage;
 
-	@OneToMany(mappedBy  = "programmingLanguage")
-	public List<JobAdvertisementProgrammingLanguage> jobAdvertisementProgrammingLanguage;
-	
-	@OneToMany(mappedBy  = "programmingLanguage")
-	public List<UserProgrammingLanguage> userProgrammingLanguage;
-	
 }

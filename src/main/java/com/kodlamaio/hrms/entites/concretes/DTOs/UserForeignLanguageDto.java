@@ -1,5 +1,6 @@
 package com.kodlamaio.hrms.entites.concretes.DTOs;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,8 +8,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoginDto {
+public class UserForeignLanguageDto {
 
-	public String email;
-	public String password;
+	public String UserName;
+	public String ForeignLanguageName;
+	public short ForeignLanguageLevel;
+	
 }

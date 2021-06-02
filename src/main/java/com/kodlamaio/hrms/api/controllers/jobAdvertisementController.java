@@ -1,12 +1,8 @@
 package com.kodlamaio.hrms.api.controllers;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,7 +36,7 @@ public class jobAdvertisementController  {
 		return jobAdvertisementService.getAllSorted();
 	}
 	
-	@GetMapping("/")
+	@GetMapping("/getbyemployer")
 	public Result getByEmployer(@RequestParam int EmployerId){
 		
 		return jobAdvertisementService.getByEmployer(EmployerId);

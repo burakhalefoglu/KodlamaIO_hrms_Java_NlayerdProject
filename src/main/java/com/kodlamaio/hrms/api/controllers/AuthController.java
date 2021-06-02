@@ -40,7 +40,7 @@ public class AuthController {
 	}
 	
 	
-	@PostMapping("/register/employee")
+	@PostMapping("/register/employer")
 	public Result registerEmployer(@RequestBody EmployerRegisterDto employer) {
 		
 		return authService.registerAsEmployer(employer);

@@ -1,11 +1,14 @@
 package com.kodlamaio.hrms.entites.concretes;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -39,4 +42,19 @@ public class User {
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
 	private Employee employee;
+	
+	
+	@OneToMany(mappedBy  = "user")
+	public List<UserJobExperience> userJobExperience;
+	
+	@OneToMany(mappedBy  = "user")
+	public List<UserSchool> userSchool;
+	
+	@OneToMany(mappedBy  = "user")
+	public List<UserForeignLanguage> userForeignLanguage;
+	
+	@OneToMany(mappedBy  = "user")
+	public List<UserProgrammingLanguage> userProgrammingLanguage;
+	
+	
 }
